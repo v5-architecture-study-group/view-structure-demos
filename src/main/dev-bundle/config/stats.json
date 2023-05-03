@@ -127,6 +127,7 @@
     "@vaadin/vaadin-usage-statistics": "2.1.2",
     "@vaadin/vertical-layout": "24.0.3",
     "@vaadin/virtual-list": "24.0.3",
+    "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "2.29.3",
     "lit-element": "3.3.2",
     "lit-html": "2.7.3",
@@ -236,9 +237,11 @@
     "vaadin-time-picker/timepickerConnector.js": "68889ce9748478f71bf1620d488abbbd588f8047618ac558315d9b0b689e75e8",
     "virtualListConnector.js": "e89f6bc6f5cd4765c863ae12721371ebff9079d163679e3989368fb7f74e5e61"
   },
-  "themeJsonContents": {},
+  "themeJsonContents": {
+    "my-theme": "{\n  \"lumoImports\" : [ \"typography\", \"color\", \"spacing\", \"badge\", \"utility\" ]\n}"
+  },
   "entryScripts": [
-    "VAADIN/build/indexhtml-af3f5996.js"
+    "VAADIN/build/indexhtml-b1112fb9.js"
   ],
   "webComponents": [],
   "packageJsonHash": "a89b689ec344ccdc7b126a3605399c2171141918d2911a0efd1d21aa157c62b8"

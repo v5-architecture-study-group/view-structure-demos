@@ -4,7 +4,6 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.JsModule;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.theme.lumo.LumoUtility;
 
 @JsModule("@vaadin/vaadin-lumo-styles/presets/compact.js")
 public class BaseView extends VerticalLayout {
@@ -77,7 +76,6 @@ public class BaseView extends VerticalLayout {
         toolbar.setWidthFull();
         toolbar.setJustifyContentMode(JustifyContentMode.BETWEEN);
         toolbar.setSpacing(false);
-        toolbar.addClassName(LumoUtility.Padding.Horizontal.MEDIUM);
         return toolbar;
     }
 
