@@ -1,4 +1,4 @@
-package com.example.demo.viewstructures.iteration2.common;
+package com.example.demo.viewstructures.iteration2;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.JsModule;
@@ -7,7 +7,7 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
 @JsModule("@vaadin/vaadin-lumo-styles/presets/compact.js")
-public class BaseView extends VerticalLayout {
+class BaseView extends VerticalLayout { // Package protected to prevent accidental import into other iterations
 
     private final LazyComponent<Toolbar> top = new LazyComponent<>(Toolbar::new, this::addComponentAsFirst);
     private final LazyComponent<Toolbar> bottom = new LazyComponent<>(Toolbar::new, this::add);

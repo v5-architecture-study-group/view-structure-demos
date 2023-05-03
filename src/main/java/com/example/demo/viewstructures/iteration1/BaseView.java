@@ -1,4 +1,4 @@
-package com.example.demo.viewstructures.iteration1.common;
+package com.example.demo.viewstructures.iteration1;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.dependency.JsModule;
@@ -6,7 +6,7 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 
 @JsModule("@vaadin/vaadin-lumo-styles/presets/compact.js")
-public class BaseView extends VerticalLayout {
+class BaseView extends VerticalLayout { // Package protected to prevent accidental import into other iterations
 
     private HorizontalLayout top;
     private HorizontalLayout topLeftSection;

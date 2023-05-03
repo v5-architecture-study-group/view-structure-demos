@@ -1,10 +1,10 @@
-package com.example.demo.viewstructures.iteration2.common;
+package com.example.demo.viewstructures.iteration2;
 
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
-public class Toolbar extends HorizontalLayout {
+class Toolbar extends HorizontalLayout { // Package protected to prevent accidental import into other iterations
 
     private final HorizontalLayout left;
     private final HorizontalLayout right;

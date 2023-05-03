@@ -2,7 +2,6 @@ package com.example.demo.viewstructures.iteration2;
 
 import com.example.demo.viewstructures.data.ExampleDTO;
 import com.example.demo.viewstructures.data.ExampleEnum;
-import com.example.demo.viewstructures.iteration2.common.BaseView;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.button.ButtonVariant;
 import com.vaadin.flow.component.grid.Grid;
