@@ -8,11 +8,13 @@ import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.splitlayout.SplitLayoutVariant;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
+import static java.util.Objects.requireNonNull;
+
 @JsModule("@vaadin/vaadin-lumo-styles/presets/compact.js")
 class BaseView extends Composite<ContainerWithToolbars> { // Package protected to prevent accidental import into other iterations
 
-    private final Div mainContentContainer = createContentContainer();
-    private final Div rightContentContainer = createContentContainer();
+    private final ContentContainer mainContentContainer = new ContentContainer();
+    private final ContentContainer rightContentContainer = new ContentContainer();
 
     public BaseView() {
         mainContentContainer.addClassName(LumoUtility.Margin.Left.MEDIUM);
@@ -36,13 +38,19 @@ class BaseView extends Composite<ContainerWithToolbars> { // Package protected t
         return new ContainerWithToolbars(); // Because of package protection, Flow can't instantiate this class on its own
     }
 
-    private Div createContentContainer() {
-        var div = new Div();
-        div.addClassName(LumoUtility.BoxShadow.SMALL);
-        div.addClassName(LumoUtility.Margin.Vertical.MEDIUM);
-        div.addClassName(LumoUtility.BorderRadius.MEDIUM);
-        div.addClassName(LumoUtility.Background.BASE);
-        return div;
+    private static class ContentContainer extends Div {
+        public ContentContainer() {
+            addClassName(LumoUtility.BoxShadow.SMALL);
+            addClassName(LumoUtility.Margin.Vertical.MEDIUM);
+            addClassName(LumoUtility.BorderRadius.MEDIUM);
+            addClassName(LumoUtility.Background.BASE);
+        }
+
+        public void setContent(Component component) {
+            requireNonNull(component, "component must not be null");
+            removeAll();
+            add(component);
+        }
     }
 
     public BaseView withTopLeftComponents(Component... components) {
@@ -66,14 +74,12 @@ class BaseView extends Composite<ContainerWithToolbars> { // Package protected t
     }
 
     public BaseView withMainContent(Component component) {
-        mainContentContainer.removeAll();
-        mainContentContainer.add(component);
+        mainContentContainer.setContent(component);
         return this;
     }
 
     public BaseView withRightContent(Component component) {
-        rightContentContainer.removeAll();
-        rightContentContainer.add(component);
+        rightContentContainer.setContent(component);
         return this;
     }
 }
