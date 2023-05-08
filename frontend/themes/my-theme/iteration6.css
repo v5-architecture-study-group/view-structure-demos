@@ -1,0 +1,84 @@
+.iteration6.content-container.outer {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+}
+
+.iteration6.content-container.outer:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - var(--lumo-space-m) * 2);
+    height: calc(100% - var(--lumo-space-m) * 2);
+    box-shadow: var(--lumo-box-shadow-s);
+    margin: var(--lumo-space-m);
+    z-index: -1;
+    border-radius: var(--lumo-border-radius-s);
+}
+
+.iteration6.content-container .inner {
+    border-radius: var(--lumo-border-radius-s);
+    background: var(--lumo-base-color);
+    margin: var(--lumo-space-m);
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.iteration6.content-container.left-content .inner {
+    margin-right: var(--lumo-space-s);
+}
+
+.iteration6.content-container.outer.left-content:after {
+    width: calc(100% - var(--lumo-space-m) - var(--lumo-space-s));
+    margin-right: var(--lumo-space-s);
+}
+
+.iteration6.content-container.main-content .inner {
+    margin-right: var(--lumo-space-s);
+    margin-left: var(--lumo-space-s);
+}
+
+.iteration6.content-container.outer.main-content:after {
+    width: calc(100% - 2 * var(--lumo-space-s));
+    margin-right: var(--lumo-space-s);
+    margin-left: var(--lumo-space-s);
+}
+
+.iteration6.content-container.right-content .inner {
+    margin-left: var(--lumo-space-s);
+}
+
+.iteration6.content-container.outer.right-content:after {
+    width: calc(100% - var(--lumo-space-m) - var(--lumo-space-s));
+    margin-left: var(--lumo-space-s);
+}
+
+/* Special treatment of margins when side panels are hidden */
+
+.left-content-hidden .iteration6.content-container.main-content .inner {
+    margin-left: var(--lumo-space-m);
+}
+
+.left-content-hidden .iteration6.content-container.outer.main-content:after {
+    margin-left: var(--lumo-space-m);
+}
+
+.right-content-hidden .iteration6.content-container.main-content .inner {
+    margin-right: var(--lumo-space-m);
+}
+
+.right-content-hidden .iteration6.content-container.outer.main-content:after {
+    margin-right: var(--lumo-space-m);
+}
+
+.left-content-hidden.right-content-visible .iteration6.content-container.outer.main-content:after,
+.right-content-hidden.left-content-visible .iteration6.content-container.outer.main-content:after {
+    width: calc(100% - var(--lumo-space-s) - var(--lumo-space-m));
+}
+
+.left-content-hidden.right-content-hidden .iteration6.content-container.outer.main-content:after {
+    width: calc(100% - 2 * var(--lumo-space-m));
+}
