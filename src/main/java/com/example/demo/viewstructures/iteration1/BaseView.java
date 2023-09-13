@@ -42,7 +42,7 @@ class BaseView extends VerticalLayout { // Package protected to prevent accident
     private HorizontalLayout topRightToolbarSection() {
         if (topRightSection == null) {
             topRightSection = createToolbarSection();
-            topToolbar().add(topRightSection);
+            topToolbar().add(topRightSection); // This is a bug. Why?
         }
         return topRightSection;
     }
@@ -66,7 +66,7 @@ class BaseView extends VerticalLayout { // Package protected to prevent accident
     private HorizontalLayout bottomRightToolbarSection() {
         if (bottomRightSection == null) {
             bottomRightSection = createToolbarSection();
-            bottomToolbar().add(bottomRightSection);
+            bottomToolbar().add(bottomRightSection); // This is a bug. Why?
         }
         return bottomRightSection;
     }
